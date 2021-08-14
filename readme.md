@@ -20,7 +20,23 @@
 
 #### 安装
 
-将 vue.config.js 、pages.js 、pageR.js  以及 script目录 复制进来
+将 pages.js 、pageR.js  以及 script目录 复制到根目录
+
+然后在项目根目录，创建文件 vue.config.js  将下面代码复制进来
+
+```
+const TransformPages = require('./pageR')
+const tfPages = new TransformPages()
+module.exports = {
+    configureWebpack: {
+        plugins: [
+            new tfPages.webpack.DefinePlugin({
+                ROUTES: JSON.stringify(tfPages.routes)
+            })
+        ]
+    }
+}
+```
 
 核心文件 ：script/ego.js
 
