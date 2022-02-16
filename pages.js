@@ -40,7 +40,7 @@ module.exports = function(pagesJson, loader) {
 
 	
 	handle(pagesJson.pages)
-	handle(pagesJson.subPackages[0].pages)
+	#handle(pagesJson.subPackages[0].pages) //加载分包 通过json的操作，参数给分包的pages
 
 
 	return pagesJson
