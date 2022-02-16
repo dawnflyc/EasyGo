@@ -18,6 +18,26 @@
 
 
 
+#### 跳转方式演示
+
+```
+			<view @click="ego('Shop')">页面名</view>
+			<view @click="ego('商店')">标题</view>
+			<view @click="ego('Pages/Shop/Shop')">绝对</view>
+			<view @click="ego('Shop/Shop')">免Pages</view>
+			<view @click="ego('../Shop/Shop')">相对</view>
+```
+
+可以用这五种方式跳转，在不用配置的前提下
+
+#### 传参与重定向
+
+```
+			<view @click="ego('Shop',{},true)">跳转</view>
+```
+
+一共三个参数，地址、参数、重定向，后两个有默认值，普通跳转只需要写url即可
+
 #### 安装
 
 将 pages.js 、pageR.js  以及 script目录 复制到根目录
@@ -44,7 +64,7 @@ module.exports = {
 
 #### 如何使用
 
-导入 ego.js 然后 ego.rgo(跳转的页面,[是否重定向]) 
+导入 ego.js 然后 ego(跳转的页面,[是否重定向]) 
 
 
 
